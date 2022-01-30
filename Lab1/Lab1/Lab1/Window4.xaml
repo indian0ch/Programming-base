@@ -1,0 +1,29 @@
+﻿<Window x:Class="Lab1.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1"
+        mc:Ignorable="d"
+        Title="First WPF APP 2022" Height="450" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/photo_2022-01-31 01.47.49.jpeg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Back To Main Window" HorizontalAlignment="Right" Margin="0,379,11,0" VerticalAlignment="Bottom" Height="37" Width="123" Background="#FFFF4A06" FontSize="16" FontFamily="Gabriola" FontWeight="Bold" Click="Button_Click" Foreground="#FFFBE8E8" Grid.ColumnSpan="2"/>
+        <Label Content="Some Information About Us" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Background="#FFA7E8E0" Height="47" Width="306" FontFamily="Javanese Text" FontSize="16" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content=" Creator: Andrii Fesiuk" HorizontalAlignment="Right" Margin="0,103,10,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="16" FontWeight="Bold" Background="#FFB6C6D7" Height="29" Width="225"/>
+        <Label Content="Student Of Kyiv Politechnic Institute" HorizontalAlignment="Left" Margin="40,145,0,0" VerticalAlignment="Top" Background="#FF92A8BF" FontWeight="Bold" FontSize="16" FontFamily="Cambria Math" Height="35" Width="280"/>
+        <Label Content="FAM, KP-12" HorizontalAlignment="Left" Margin="73,344,0,0" VerticalAlignment="Top" Background="#FF557476" FontFamily="Segoe UI Variable Display Semibold" FontWeight="Bold" FontSize="20"/>
+        <Image  Height="145" Margin="0,164,10,0" VerticalAlignment="Top" Width="176" Source="/IMG_3612.JPG"  RenderTransformOrigin="0.723,0.492" Visibility="vISIBLE" HorizontalAlignment="Right">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/IMG_3612.JPG"/>
+            </Image.OpacityMask>
+        </Image>
+
+    </Grid>
+</Window>
