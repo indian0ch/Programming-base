@@ -1,0 +1,87 @@
+﻿<Window x:Class="HotelProgramTest.AboutClientInform"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelProgramTest"
+        mc:Ignorable="d"
+        Title="" Height="511" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonCheckStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="Red"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FFFFC50E">
+        <Label Content="Виберіть кімнату, про жителів якої ви хочете  &#xD;&#xA;отримати інформацію" HorizontalAlignment="Left" Margin="18,23,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Введіть місто,про клієнтів якого ви &#xD;&#xA;хочете дізнатись інформацію" HorizontalAlignment="Left" Margin="475,18,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="16" FontWeight="Bold"/>
+        <ComboBox x:Name="RoomsCb" HorizontalAlignment="Left" Margin="59,88,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="RoomsCb_SelectionChanged" FontFamily="Centaur" FontSize="20" Height="30"/>
+        <Label Content="Surname:" HorizontalAlignment="Left" Margin="18,161,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="18,215,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <Label Content="SecName:" HorizontalAlignment="Left" Margin="18,270,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <Label Content="City:" HorizontalAlignment="Left" Margin="25,325,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <Label Content="Date Arrived:" HorizontalAlignment="Left" Margin="25,378,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <Label x:Name="SurnameT" Content="" HorizontalAlignment="Left" Margin="147,161,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22" RenderTransformOrigin="0.253,0.336" Foreground="#FF0B0606"/>
+        <Label x:Name="NameT" Content="" HorizontalAlignment="Left" Margin="147,215,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22" Foreground="#FF141212"/>
+        <Label x:Name="SecNameT" Content="Label" HorizontalAlignment="Left" Margin="147,270,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22" Foreground="#FF060505"/>
+        <Label x:Name="CityT" Content="Label" HorizontalAlignment="Left" Margin="147,325,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <Label x:Name="DateT" Content="Label" HorizontalAlignment="Left" Margin="194,378,0,0" VerticalAlignment="Top" FontFamily="Centaur" FontSize="22"/>
+        <CheckBox x:Name="ChBox" Content="Номер вільний" HorizontalAlignment="Left" Margin="90,123,0,0" VerticalAlignment="Top" Height="29" Width="139" FontSize="16"/>
+        <Button x:Name="ReturnBtn" Content="Return" HorizontalAlignment="Center" Margin="0,427,0,0" VerticalAlignment="Top" Click="ReturnBtn_Click" FontFamily="Centaur" FontSize="22" Width="140" Height="47" Foreground="White" Background="#FFFC0E0E"/>
+        <TextBox x:Name="CityTb" HorizontalAlignment="Left" Margin="520,69,0,0" TextWrapping="Wrap" Text="English letters only" VerticalAlignment="Top" Width="198" MouseDoubleClick="CityTb_MouseDoubleClick" Height="29" TextChanged="CityTb_TextChanged" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Style="{DynamicResource ButtonCheckStyle}" x:Name="CheckCityBtn" Content="Check" HorizontalAlignment="Left" Margin="578,103,0,0" VerticalAlignment="Top" Click="CheckCityBtn_Click" FontFamily="Centaur" FontSize="16" Height="34" Width="89"/>
+        <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="424,141,10,75" FontSize="14" Background="#FF00C9EB" FontFamily="Centaur"/>
+
+    </Grid>
+</Window>
