@@ -1,7 +1,7 @@
 # Programming-base
 There you can find my two projects:
 
-# Hotel Informal Program (C# WPF with Microsoft SQL Server)
+## Hotel Informal Program (C# WPF with Microsoft SQL Server)
 > Spoiler 'I do not use OOP here due to its a programming base course and the main focus there to learn WPF and Microsoft SQL Server concepts'
 
 The Hotel Informal Program repository houses a comprehensive software solution developed using C# (WPF) and integrated with Microsoft SQL Server. This project aims to provide a robust and user-friendly management system for hotels, streamlining various operations and facilitating efficient day-to-day processes.
@@ -15,4 +15,4 @@ The Hotel Informal Program repository houses a comprehensive software solution d
 7) Security and Access Control: The software incorporates robust security measures, ensuring secure access and protecting sensitive guest information. It provides role-based access control, allowing different user roles with varying levels of permissions.
 8) Customization and Scalability: The codebase is designed to be modular and extensible, allowing for easy customization and scalability to meet specific hotel requirements. It can accommodate additional features or integration with external systems if needed.
 
-# Project Soft Protection (C#)
+## Project Soft Protection (C#)
